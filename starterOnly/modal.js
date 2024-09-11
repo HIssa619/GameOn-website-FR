@@ -1,16 +1,9 @@
-function editNav() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
 
 // DOM Elements
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
+const closebtn = document.querySelector("close")
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -20,4 +13,19 @@ function launchModal() {
   modalbg.style.display = "block";
 }
 
+//close modal event
+modalbg.forEach((btn) => btn.addEventListener("click", closeModal));
 
+// close modal form
+function closeModal() {
+  modalbg.style.display = "none";
+}
+
+function editNav() {
+  const x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
