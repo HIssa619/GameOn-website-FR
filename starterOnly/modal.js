@@ -139,6 +139,10 @@ form.addEventListener("submit", function (e) {
   // Si tout est valide, soumettre le formulaire
   if (isValid) {
     form.submit();
+      closeModal();
+      alert("Merci ! Votre réservation a été reçue.")
+      
+    
   }
 });
 
@@ -166,3 +170,6 @@ function removeErrorradio(element) {
   element.removeAttribute("data-error");
   element.removeAttribute("data-error-visible");
 }
+
+
+
