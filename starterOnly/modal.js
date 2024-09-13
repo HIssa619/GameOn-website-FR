@@ -12,9 +12,8 @@ const birthdate=document.getElementById("birthdate");
 const quantity=document.getElementById("quantity");
 const locationChoices = document.querySelectorAll('input[name="location"]');
 const termsAccepted = document.getElementById("checkbox1");
-
 const locationdiv=document.querySelector(".location-container")
-
+const confirmationbg = document.querySelector(".submit-confirmationbg");
 
 
 // launch modal event
@@ -39,12 +38,8 @@ modalbg.style.display = "none";
 
 // Toggles responsive mode for the navigation menu 
 function editNav() {
-  const x = document.getElementById("myTopnav");
-  if (x.classname === "topnav") {
-    x.classname += " responsive";
-  } else {
-    x.classname = "topnav";
-  }
+  const topnavbar = document.getElementById("myTopnav");
+  topnavbar.classList.toggle("responsive");
 }
 
 form.addEventListener("submit", function (e) {
@@ -84,7 +79,7 @@ form.addEventListener("submit", function (e) {
   } else {
     const today = new Date();
     const birthDate = new Date(birthdate.value);
-    const age = today.getFullYear() - birthDate.getFullYear();
+    let age = today.getFullYear() - birthDate.getFullYear();
     
     // Calcul de l'âge basé sur l'anniversaire
     const monthDiff = today.getMonth() - birthDate.getMonth();
@@ -138,13 +133,14 @@ form.addEventListener("submit", function (e) {
 
   // Si tout est valide, soumettre le formulaire
   if (isValid) {
-    form.submit();
+      confirmation();
       closeModal();
-      alert("Merci ! Votre réservation a été reçue.")
-      
-    
-  }
-});
+      form.reset(); 
+    }
+  });
+  
+
+  
 
 // Fonction pour afficher les erreurs
 function displayError(element, message) {
@@ -173,3 +169,25 @@ function removeErrorradio(element) {
 
 
 
+function confirmation() {
+  confirmationbg.style.display = "block";
+}
+
+
+const closeconfirmationBtn = document.querySelector(".close");
+
+// lunch confirmation message
+function confirmation() {
+  confirmationbg.style.display = "block";
+}
+
+
+// Add event listener to close confirmation btn[Aissa]
+confirmationbg.addEventListener("click", closeconfirmation);
+
+
+
+// Close confirmation [Aissa]
+function closeconfirmation() {
+confirmationbg.style.display = "none";
+}

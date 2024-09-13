@@ -50,18 +50,25 @@ img {
   text-decoration: none;
   font-size: 20px;
   font-family: Roboto, sans-serif;
+
 }
+
+
 
 .topnav a:hover {
   background-color: #ff0000;
   color: #ffffff;
   border-radius: 15px;
+  text-decoration: underline;
+  text-decoration-color: white;
+  text-decoration-thickness: 2px;
 }
 
 .topnav a.active {
   background-color: #ff0000;
   color: #ffffff;
   border-radius: 15px;
+
 }
 
 .topnav .icon {
@@ -174,7 +181,36 @@ main {
 .bground.active {
   display: block;
 }
+.submit-confirmationbg{
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(26, 39, 156, 0.4);
+}
 
+.submit-confirmationbg.active {
+  display: block;
+}
+.submit-confirmation-content{
+  margin: 5% auto;
+  width: 100%;
+  max-width: 500px;
+  height: 40rem;
+  text-align: center;
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+  background: #232323;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+  padding-top: 15rem;
+}
 .content {
   margin: 5% auto;
   width: 100%;
@@ -529,7 +565,7 @@ footer {
   }
 }
 
-@keyframes modalopen {
+@keyframes olopen {
   from {
     opacity: 0;
     transform: translateY(-150px);
