@@ -135,7 +135,6 @@ form.addEventListener("submit", function (e) {
   if (isValid) {
       confirmation();
       closeModal();
-      form.reset(); 
     }
   });
   
@@ -190,4 +189,5 @@ confirmationbg.addEventListener("click", closeconfirmation);
 // Close confirmation [Aissa]
 function closeconfirmation() {
 confirmationbg.style.display = "none";
+form.submit(); 
 }
